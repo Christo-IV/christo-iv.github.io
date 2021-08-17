@@ -1,0 +1,91 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow: hidden;
+}
+
+/* ----- */
+/* Navigation */
+/* ----- */
+
+/* TODO - Differences between selected and non selected nav elements */
+/* TODO - When hovering over another circle the line gets coloured in from the currently active circle to the one being hovered over */
+
+.side-navigation {
+    position: fixed;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav-element:not(:nth-child(4)) {
+    margin-bottom: 1rem;
+}
+
+.nav-element {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-circle {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 0.2rem solid black;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.nav-text {
+    margin-left: 0.6rem;
+    color: black;
+    letter-spacing: 0.2rem;
+}
+
+/* FIXME - Currently this has a very shoddy way of centering the connecting lines, prone to failure and it's hard to deal with when animating */
+.nav-line {
+    position: relative;
+    top: 1rem; 
+    height: 1.5rem;
+    width: 0.4rem;
+    background-color: black;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* ----- */
+/* Content */
+/* ----- */
+
+.content {
+    /* This is a general template for each content container */
+    height: 100vh;
+    width: 100vw;
+}
+
+#introduction {
+    background-color: gray;
+}
+
+#projects {
+    background-color: white;
+}
+
+#education {
+    background-color: lightcyan;
+}
+
+#contact {
+    background-color: lightgreen;
+}
