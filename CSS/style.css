@@ -92,8 +92,8 @@ body {
   background-color: rgb(236, 236, 236);
 }
 
-#education,
-.nav-element[href="#education"] .nav-circle {
+#skills,
+.nav-element[href="#skills"] .nav-circle {
   background-color: rgb(209, 5, 59);
 }
 
