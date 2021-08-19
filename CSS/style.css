@@ -1,16 +1,16 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Manrope', sans-serif;;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 /* ----- */
@@ -19,49 +19,57 @@ body {
 
 /* TODO - Differences between selected and non selected nav elements */
 /* TODO - When hovering over another circle the line gets coloured in from the currently active circle to the one being hovered over */
+/* TODO - Mask out nav-circles from nav-line */
 
 .side-navigation {
-    position: fixed;
-    left: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.nav-element:not(:nth-child(4)) {
-    margin-bottom: 1rem;
+  position: fixed;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .nav-element {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.5rem 0;
+}
+
+.nav-element:hover .nav-circle {
+  border-color: white;
+  transition-duration: 0.2s;
+}
+
+.nav-element:hover .nav-text {
+  color: white;
+  transition-duration: 0.2s;
 }
 
 .nav-circle {
-    width: 1.5rem;
-    height: 1.5rem;
-    border: 0.2rem solid black;
-    border-radius: 50%;
-    background-color: black;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0.4rem solid lightgray;
+  border-radius: 50%;
 }
 
 .nav-text {
-    margin-left: 0.6rem;
-    color: black;
-    letter-spacing: 0.2rem;
+  margin-left: 0.6rem;
+  color: lightgray;
+  letter-spacing: 0.2rem;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
-/* FIXME - Currently this has a very shoddy way of centering the connecting lines, prone to failure and it's hard to deal with when animating */
 .nav-line {
-    position: relative;
-    top: 1rem; 
-    height: 1.5rem;
-    width: 0.4rem;
-    background-color: black;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+  position: absolute;
+  top: 50%;
+  height: 80%;
+  width: 0.5rem;
+  background-color: lightgray;
+  left: 0.75rem;
+  transform: translate(-50%, -50%);
+  z-index: -1;
 }
 
 /* ----- */
@@ -69,23 +77,40 @@ body {
 /* ----- */
 
 .content {
-    /* This is a general template for each content container */
-    height: 100vh;
-    width: 100vw;
+  /* This is a general template for each content container */
+  height: 100vh;
+  width: 100vw;
 }
 
-#introduction {
-    background-color: gray;
+#introduction,
+.nav-element[href="#introduction"] .nav-circle {
+  background-color: rgb(24, 24, 24);
 }
 
-#projects {
-    background-color: white;
+#projects,
+.nav-element[href="#projects"] .nav-circle {
+  background-color: rgb(236, 236, 236);
 }
 
-#education {
-    background-color: lightcyan;
+#education,
+.nav-element[href="#education"] .nav-circle {
+  background-color: rgb(209, 5, 59);
 }
 
-#contact {
-    background-color: lightgreen;
+#contact,
+.nav-element[href="#contact"] .nav-circle {
+  background-color: rgb(1, 158, 113);
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-number {
+  color: white;
+  font-size: 20rem;
+  font-weight: 800;
+  text-shadow: 0 0 1px gray;
 }

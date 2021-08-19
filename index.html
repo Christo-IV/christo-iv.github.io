@@ -1,70 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="CSS/style.css"/>
-</head>
-<body>
-  <div class="container">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!--Navigation-->
+      <nav class="side-navigation" id="sideNavigation">
+        <a class="nav-element" href="#introduction" id="introductionNav">
+          <span class="nav-circle"></span>
+          <p class="nav-text">INTRODUCTION</p>
+        </a>
 
-    <!--Navigation-->
-    <nav class="side-navigation">
-      <a class="nav-element" href="#introduction" id="introductionNav">
-        <span class="nav-circle">
-          <div class="nav-line"></div>
-        </span>
-        <p class="nav-text">INTRODUCTION</p>
-      </a>
-      <!-- <svg height="210" width="500">
-        <line id="line1" style="stroke: rgb(255,0,0); stroke-width: 2px" />
-      </svg> -->
-      <a class="nav-element" href="#projects" id="projectsNav">
-        <span class="nav-circle">
-          <div class="nav-line"></div>
-        </span>
-        <p class="nav-text">PROJECTS</p>
-      </a>
+        <a class="nav-element" href="#projects" id="projectsNav">
+          <span class="nav-circle"></span>
+          <p class="nav-text">PROJECTS</p>
+        </a>
 
-      <a class="nav-element" href="#education" id="educationNav">
-        <span class="nav-circle">
-          <div class="nav-line"></div>
-        </span>
-        <p class="nav-text">EDUCATION</p>
-      </a>
+        <a class="nav-element" href="#education" id="educationNav">
+          <span class="nav-circle"></span>
+          <p class="nav-text">EDUCATION</p>
+        </a>
 
-      <a class="nav-element" href="#contact" id="contactNav">
-        <span class="nav-circle"></span>
-        <p class="nav-text">CONTACT</p>
-      </a>
-    </nav>
+        <a class="nav-element" href="#contact" id="contactNav">
+          <span class="nav-circle"></span>
+          <p class="nav-text">CONTACT</p>
+        </a>
 
-    <!--Content-->
-    <div class="content" id="introduction"></div>
-    <div class="content" id="projects"></div>
-    <div class="content" id="education"></div>
-    <div class="content" id="contact"></div>
-  </div>
+        <div class="nav-line"></div>
+      </nav>
 
-  <script>
-    // const line1 = document.querySelector("#line1");
-    // const intBall = document.querySelector("#introductionNav");
-    // const proBall = document.querySelector("#projectsNav");
+      <!--Content-->
+      <div class="content center-content" id="introduction">
+        <p class="page-number">1</p>
+      </div>
+      <div class="content center-content" id="projects">
+        <p class="page-number">2</p>
+      </div>
+      <div class="content center-content" id="education">
+        <p class="page-number">3</p>
+      </div>
+      <div class="content center-content" id="contact">
+        <p class="page-number">4</p>
+      </div>
+    </div>
 
-    // const pos1 = intBall.getBoundingClientRect();
-    // const pos2 = proBall.getBoundingClientRect();
-
-    // line1.setAttribute('x1', pos1.left);
-    // line1.setAttribute('y1', pos1.top);
-    // line1.setAttribute('x2', pos2.left);
-    // line1.setAttribute('y2', pos2.top);
-
-    // console.log(line1);
-  </script>
-</body>
+    <script src="JS/main.js"></script>
+  </body>
 </html>
