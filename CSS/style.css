@@ -1,3 +1,15 @@
+:root {
+  --bg-color: rgb(24, 24, 24);
+  --primary: lightgray;
+  --secondary: rgb(1, 158, 113);
+  --highlight: white;
+
+  --black: rgb(24, 24, 24);
+  --white: rgb(236, 236, 236);
+  --red: rgb(209, 5, 59);
+  --green: rgb(1, 158, 113);
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -11,6 +23,7 @@ html {
 
 body {
   overflow: hidden;
+  background-color: var(--bg-color);
 }
 
 /* ----- */
@@ -23,7 +36,7 @@ body {
 
 .side-navigation {
   position: fixed;
-  left: 2rem;
+  left: 3rem;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -36,40 +49,44 @@ body {
   padding: 0.5rem 0;
 }
 
-.nav-element:hover .nav-circle {
-  border-color: white;
-  transition-duration: 0.2s;
-}
-
+.nav-element:hover .nav-circle,
 .nav-element:hover .nav-text {
-  color: white;
+  border-color: var(--highlight);
+  color: var(--highlight);
   transition-duration: 0.2s;
 }
 
 .nav-circle {
   width: 1.5rem;
   height: 1.5rem;
-  border: 0.4rem solid lightgray;
+  border: 0.4rem solid var(--primary);
   border-radius: 50%;
 }
 
 .nav-text {
   margin-left: 0.6rem;
-  color: lightgray;
+  color: var(--primary);
   letter-spacing: 0.2rem;
-  font-weight: bold;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  font-weight: 800;
+  /* text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4); */
 }
 
 .nav-line {
   position: absolute;
   top: 50%;
-  height: 80%;
+  height: 90%;
+  border-radius: 1rem;
   width: 0.5rem;
-  background-color: lightgray;
+  background-color: var(--primary);
   left: 0.75rem;
   transform: translate(-50%, -50%);
   z-index: -1;
+  /* background-image: linear-gradient(
+    180deg,
+    transparent,
+    lightgray,
+    transparent
+  ); */
 }
 
 /* ----- */
@@ -82,23 +99,19 @@ body {
   width: 100vw;
 }
 
-#introduction,
-.nav-element[href="#introduction"] .nav-circle {
+#navIntroduction .nav-circle {
   background-color: rgb(24, 24, 24);
 }
 
-#projects,
-.nav-element[href="#projects"] .nav-circle {
+#navProjects .nav-circle {
   background-color: rgb(236, 236, 236);
 }
 
-#skills,
-.nav-element[href="#skills"] .nav-circle {
+#navSkills .nav-circle {
   background-color: rgb(209, 5, 59);
 }
 
-#contact,
-.nav-element[href="#contact"] .nav-circle {
+#navContact .nav-circle {
   background-color: rgb(1, 158, 113);
 }
 
@@ -109,8 +122,119 @@ body {
 }
 
 .page-number {
-  color: white;
-  font-size: 20rem;
+  opacity: 0.01;
+  position: absolute;
+  color: var(--primary);
+  font-size: 80rem;
   font-weight: 800;
-  text-shadow: 0 0 1px gray;
+  transform: rotate(3deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Contact form*/
+
+.contact-form {
+  z-index: 1;
+}
+
+.form-head {
+  font-size: 2rem;
+}
+
+.form-head,
+.form-input,
+.form-submit {
+  color: var(--primary);
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  width: 40rem;
+}
+
+.form-input,
+.form-submit {
+  border: 2px solid var(--primary);
+  border-radius: 2px;
+}
+
+.form-input {
+  width: 100%;
+  background-color: var(--bg-color);
+  padding: 10px;
+  margin-bottom: 1.5rem;
+}
+
+/* TODO - Find out why the height of the indicator is different on inputs (the indicator on "Subject" form-input is ~1px higher) */
+.focus-indicator {
+  position: relative;
+  height: 0.4rem;
+  width: 100%;
+  bottom: 1.9rem;
+  border-radius: 2px;
+}
+
+.form-input:focus + .focus-indicator {
+  background: linear-gradient(to right, var(--primary) 50%, transparent 50%);
+  background-size: 200% 200%;
+  animation: in-focus 0.5s ease forwards;
+}
+
+.form-input:focus {
+  outline: none;
+  /* background: linear-gradient(
+    to right,
+    var(--primary) 50%,
+    var(--bg-color) 50%
+  );
+  background-size: 200% 200%;
+  animation: in-focus 0.5s ease forwards; */
+}
+
+.form-input::placeholder,
+.form-input,
+.form-submit {
+  font-weight: 800;
+}
+
+.form-submit {
+  color: var(--bg-color);
+}
+
+textarea {
+  height: 10rem;
+  resize: vertical;
+}
+
+.form-submit {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 10px 50px;
+  background-color: var(--primary);
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+
+.form-submit:hover {
+  background-color: var(--highlight);
+  border-color: var(--highlight);
+}
+
+.form-submit:focus {
+  opacity: 0.5;
+}
+
+/* ----- */
+/* Animations */
+/* ----- */
+
+@keyframes in-focus {
+  from {
+    background-position: right;
+  }
+  to {
+    background-position: left;
+  }
 }

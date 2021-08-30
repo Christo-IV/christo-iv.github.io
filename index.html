@@ -17,22 +17,22 @@
     <div class="container">
       <!--Navigation-->
       <nav class="side-navigation" id="sideNavigation">
-        <a class="nav-element" href="#introduction" id="introductionNav">
+        <a class="nav-element" href="#introduction" id="navIntroduction">
           <span class="nav-circle"></span>
           <p class="nav-text">INTRODUCTION</p>
         </a>
 
-        <a class="nav-element" href="#projects" id="projectsNav">
+        <a class="nav-element" href="#projects" id="navProjects">
           <span class="nav-circle"></span>
           <p class="nav-text">PROJECTS</p>
         </a>
 
-        <a class="nav-element" href="#skills" id="skillsNav">
+        <a class="nav-element" href="#skills" id="navSkills">
           <span class="nav-circle"></span>
           <p class="nav-text">MY SKILLS</p>
         </a>
 
-        <a class="nav-element" href="#contact" id="contactNav">
+        <a class="nav-element" href="#contact" id="navContact">
           <span class="nav-circle"></span>
           <p class="nav-text">CONTACT</p>
         </a>
@@ -52,6 +52,37 @@
       </div>
       <div class="content center-content" id="contact">
         <p class="page-number">4</p>
+        <div class="contact-form">
+          <h1 class="form-head">Contact me</h1>
+          <form class="form-content">
+            <!-- TODO - Find a way to still show user's emails - without turning the background white -->
+            <input
+              type="text"
+              class="form-input"
+              placeholder="E-mail"
+              autocomplete="no"
+              onblur="reverseAnimation()"
+              required
+            />
+            <div class="focus-indicator"></div>
+            <input
+              type="text"
+              class="form-input"
+              placeholder="Subject"
+              onblur="reverseAnimation()"
+              required
+            />
+            <div class="focus-indicator"></div>
+            <textarea
+              placeholder="Message"
+              class="form-input"
+              onblur="reverseAnimation()"
+              required
+            ></textarea>
+            <div class="focus-indicator"></div>
+            <input type="submit" class="form-submit" value="Send" />
+          </form>
+        </div>
       </div>
     </div>
 

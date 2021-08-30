@@ -7,6 +7,12 @@ const projects = document.querySelector("#projects");
 const skills = document.querySelector("#skills");
 const contact = document.querySelector("#contact");
 
+// const navIntroduction = document.querySelector("#navIntroduction");
+// const navProjects = document.querySelector("#navProjects");
+// const navSkills = document.querySelector("navSkills");
+// const navContact = document.querySelector("navContact");
+
+// const navElements = [navIntroduction, navProjects, navSkills, navContact];
 const pages = [introduction, projects, skills, contact];
 
 const pageHeight = introduction.getBoundingClientRect().height;
@@ -14,6 +20,8 @@ const pageHeight = introduction.getBoundingClientRect().height;
 // TODO - Fix TypeError when trying to scroll to a non-existent page
 // TODO - Make page transitioning JS based, which then also removes the
 //        ID from the URL (e.g "christo-iv.github.io/#introduction" -> "christo-iv.github.io")
+
+// TODO - Find out why "currentPage" sometimes gets stuck as a floating point number
 
 container.addEventListener("wheel", (event) => {
   event.preventDefault();
@@ -24,8 +32,9 @@ container.addEventListener("wheel", (event) => {
 
   if (currentPage === parseInt(currentPage, 10)) {
     pages[-(currentPage - event.deltaY / 100)].scrollIntoView();
-  } else {
-    // console.log("Scrolling...");
-    null;
   }
 });
+
+const reverseAnimation = () => {
+  console.log(this);
+};
